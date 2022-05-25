@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:flutter_playground/screens/screens.dart';
 
@@ -11,36 +13,50 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        appBarTheme: const AppBarTheme(
-          backgroundColor: Colors.white,
+        appBarTheme: AppBarTheme(
+          backgroundColor: Color(0xffFBFBFB),
           elevation: 0,
         ),
-        textTheme: TextTheme(bodyText1: TextStyle(fontWeight: FontWeight.normal)),
-        primaryColor: const Color(0xff4CA6A8),
-        scaffoldBackgroundColor: Colors.white,
+        textTheme: TextTheme(
+          bodyText1: TextStyle(
+            fontWeight: FontWeight.normal,
+            fontSize: 15,
+            color: Color(0xff6A6A6A),
+          ),
+          headline1: TextStyle(
+            fontSize: 34,
+            fontWeight: FontWeight.w600,
+            color: Color(0xff1A1D1E),
+          ),
+          headline2: TextStyle(
+            fontSize: 30,
+            fontWeight: FontWeight.w700,
+            color: Color(0xff1A1D1E),
+          ),
+          headlineLarge: TextStyle(fontSize: 34),
+        ),
+        primaryColor: Color(0xff4CA6A8),
+        scaffoldBackgroundColor: Color(0xffFBFBFB),
+        // scaffoldBackgroundColor: Colors.red.shade100,
         fontFamily: 'Poppins',
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: TextButton.styleFrom(
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(15.0),
+              borderRadius: BorderRadius.circular(12.0),
             ),
-            backgroundColor: const Color(0xff4CA6A8),
+            backgroundColor: Color(0xff4CA6A8),
             primary: Colors.white,
-            padding: const EdgeInsets.symmetric(vertical: 15.0),
-            textStyle: const TextStyle(
+            padding: EdgeInsets.symmetric(vertical: 15.0),
+            textStyle: TextStyle(
               fontWeight: FontWeight.normal,
               fontSize: 15,
               fontFamily: 'Poppins',
             ),
           ),
-          // ButtonStyle(
-          //   padding: MaterialStateProperty.all<EdgeInsetsGeometry>(),
-          //   backgroundColor: MaterialStateProperty.all<Color>(Color(0xff4CA6A8)), //button color
-          //   foregroundColor: MaterialStateProperty.all<Color>(Color(0xffffffff)), //text (and icon)
-          // ),
         ),
       ),
-      home: const SplashScreen(),
+      home: LoginScreen(),
+      // home: SplashScreen(),
     );
   }
 }
