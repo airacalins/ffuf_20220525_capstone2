@@ -11,19 +11,22 @@ class SplashScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         leading: const Image(
-          image: AssetImage('assets/images/app/logo.png'),
+          image: AssetImage(
+            'assets/images/app/logo.png',
+          ),
         ),
       ),
       body: Container(
         color: Colors.white,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
-          // ignore: prefer_const_literals_to_create_immutables
           children: [
             const Expanded(
               flex: 2,
               child: Image(
-                image: AssetImage('assets/images/app/splash-screen-pic.png'),
+                image: AssetImage(
+                  'assets/images/app/splash-screen-pic.png',
+                ),
                 fit: BoxFit.cover,
               ),
             ),
@@ -32,7 +35,6 @@ class SplashScreen extends StatelessWidget {
             ),
             Expanded(
               child: Column(
-                // ignore: prefer_const_literals_to_create_immutables
                 children: [
                   Text(
                     'Find a Perfect\nJob Match',

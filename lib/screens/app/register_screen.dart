@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_playground/widgets/widgets.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+class RegisterScreen extends StatelessWidget {
+  const RegisterScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,7 @@ class LoginScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Welcome Back!',
+                    'Register Account',
                     style: Theme.of(context).textTheme.headline2,
                   ),
                   Text(
@@ -42,7 +42,17 @@ class LoginScreen extends StatelessWidget {
                     child: FormTextField(
                       hintText: 'Email',
                       prefixIcon: const Icon(
-                        Icons.email,
+                        Icons.person_outlined,
+                        color: Colors.grey,
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 10.0),
+                    child: FormTextField(
+                      hintText: 'Username',
+                      prefixIcon: const Icon(
+                        Icons.email_outlined,
                         color: Colors.grey,
                       ),
                     ),
@@ -62,12 +72,6 @@ class LoginScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Text(
-                    'Forget Password?',
-                    style: textTheme.caption!.merge(
-                      const TextStyle(fontWeight: FontWeight.w500),
-                    ),
-                  ),
                   const SizedBox(
                     height: 40,
                   ),
@@ -75,7 +79,7 @@ class LoginScreen extends StatelessWidget {
                     width: double.infinity,
                     child: ElevatedButton(
                       onPressed: () {},
-                      child: const Text('LOG IN'),
+                      child: const Text('SIGN UP'),
                     ),
                   ),
                 ],
@@ -101,11 +105,11 @@ class LoginScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        'New User? ',
+                        'Already Have an Account? ',
                         style: textTheme.bodyText1,
                       ),
                       Text(
-                        'Create Account',
+                        'Log In',
                         style: textTheme.bodyText1!.merge(
                           const TextStyle(
                             fontWeight: FontWeight.w600,

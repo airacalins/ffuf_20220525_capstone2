@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
           ),
           headline2: TextStyle(
             fontSize: 30,
-            fontWeight: FontWeight.w700,
+            fontWeight: FontWeight.w600,
             color: Color(0xff1A1D1E),
           ),
           headlineLarge: TextStyle(fontSize: 34),
@@ -55,7 +55,8 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: LoginScreen(),
+      // home: LoginScreen(),
+      home: RegisterScreen(),
       // home: SplashScreen(),
     );
   }
