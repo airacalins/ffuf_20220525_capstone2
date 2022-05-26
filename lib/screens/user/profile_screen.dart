@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: use_key_in_widget_constructors, must_be_immutable
 
 import 'package:flutter/material.dart';
 import 'package:flutter_playground/models/user.dart';
@@ -19,14 +19,14 @@ class ProfileScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text(
+        title: const Text(
           'Profile',
         ),
       ),
       body: ListView(
         children: [
           Container(
-            padding: EdgeInsets.symmetric(vertical: 50.0),
+            padding: const EdgeInsets.symmetric(vertical: 50.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
@@ -51,7 +51,7 @@ class ProfileScreen extends StatelessWidget {
                           backgroundColor: Theme.of(context).primaryColor,
                           radius: 12,
                           child: IconButton(
-                            icon: Icon(
+                            icon: const Icon(
                               Icons.edit,
                               size: 10,
                             ),
@@ -65,7 +65,7 @@ class ProfileScreen extends StatelessWidget {
                 Text(
                   '${user.firstName} ${user.lastName}',
                   style: textTheme.headline2!.merge(
-                    TextStyle(
+                    const TextStyle(
                       fontWeight: FontWeight.w500,
                     ),
                   ),

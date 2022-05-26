@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+
+import 'package:flutter_playground/routes/routes.dart';
 import 'package:flutter_playground/widgets/widgets.dart';
 
 class RegisterScreen extends StatelessWidget {
@@ -52,15 +54,17 @@ class RegisterScreen extends StatelessWidget {
                   const SizedBox(
                     height: 20,
                   ),
-                  RichText(
-                    text: TextSpan(
-                      children: [
-                        TextSpan(
-                          text: 'Already Have an Account? ',
-                          style: textTheme.bodyText1,
-                        ),
-                        TextSpan(
-                          text: 'Log In',
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Already Have an Account? ',
+                        style: textTheme.bodyText1,
+                      ),
+                      GestureDetector(
+                        onTap: () => Navigator.of(context).pushNamed(RouteManager.loginScreen),
+                        child: Text(
+                          'Log In',
                           style: textTheme.bodyText1!.merge(
                             const TextStyle(
                               fontWeight: FontWeight.w600,
@@ -68,8 +72,8 @@ class RegisterScreen extends StatelessWidget {
                             ),
                           ),
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   )
                 ],
               )

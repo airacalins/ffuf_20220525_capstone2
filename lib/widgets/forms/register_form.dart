@@ -1,5 +1,8 @@
+// ignore_for_file: use_key_in_widget_constructors
+
 import 'package:flutter/material.dart';
 import 'package:flutter_playground/widgets/widgets.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class RegisterForm extends StatelessWidget {
   @override
@@ -7,27 +10,27 @@ class RegisterForm extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.end,
       children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 10.0),
-          child: FormTextField(
-            hintText: 'Email',
-            prefixIcon: Icons.person_outlined,
+        FormTextField(
+          hintText: 'Email',
+          prefixIcon: Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: SvgPicture.asset(
+              'assets/icons/email.svg',
+              height: 5,
+            ),
           ),
         ),
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 10.0),
-          child: FormTextField(
-            hintText: 'Username',
-            prefixIcon: Icons.email_outlined,
-          ),
+        const FormTextField(
+          hintText: 'Username',
+          prefixIcon: Icon(Icons.person_outline),
         ),
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 10.0),
-          child: FormTextField(
-            hintText: 'Password',
-            prefixIcon: Icons.lock_outline,
-            suffixIcon: Icons.remove_red_eye_outlined,
+        FormTextField(
+          hintText: 'Password',
+          prefixIcon: Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: SvgPicture.asset('assets/icons/lock.svg'),
           ),
+          suffixIcon: const Icon(Icons.remove_red_eye_outlined),
         ),
         const SizedBox(
           height: 40,

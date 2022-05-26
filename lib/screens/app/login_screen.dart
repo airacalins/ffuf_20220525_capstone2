@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+
+import 'package:flutter_playground/routes/routes.dart';
 import 'package:flutter_playground/widgets/widgets.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -9,9 +11,7 @@ class LoginScreen extends StatelessWidget {
     final textTheme = Theme.of(context).textTheme;
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(''),
-      ),
+      appBar: AppBar(title: const Text(''), automaticallyImplyLeading: false),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
@@ -52,15 +52,17 @@ class LoginScreen extends StatelessWidget {
                   const SizedBox(
                     height: 20,
                   ),
-                  RichText(
-                    text: TextSpan(
-                      children: [
-                        TextSpan(
-                          text: 'New User? ',
-                          style: textTheme.bodyText1,
-                        ),
-                        TextSpan(
-                          text: 'Create Account',
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'New User? ',
+                        style: textTheme.bodyText1,
+                      ),
+                      GestureDetector(
+                        onTap: () => Navigator.of(context).pushNamed(RouteManager.registerScreen),
+                        child: Text(
+                          'Create Account',
                           style: textTheme.bodyText1!.merge(
                             const TextStyle(
                               fontWeight: FontWeight.w600,
@@ -68,9 +70,9 @@ class LoginScreen extends StatelessWidget {
                             ),
                           ),
                         ),
-                      ],
-                    ),
-                  )
+                      ),
+                    ],
+                  ),
                 ],
               )
             ],

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_playground/routes/routes.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -50,23 +52,20 @@ class SplashScreen extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 50.0),
+              padding: const EdgeInsets.symmetric(horizontal: 75.0),
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () => Navigator.of(context).pushNamed(RouteManager.loginScreen),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
-                  children: const [
-                    Text(
+                  children: [
+                    const Text(
                       'Let\'s Get Started',
                     ),
-                    SizedBox(
-                      width: 5,
+                    const SizedBox(
+                      width: 10,
                     ),
-                    Icon(
-                      Icons.keyboard_arrow_right,
-                      size: 20,
-                    )
+                    SvgPicture.asset('assets/icons/arrow-right.svg'),
                   ],
                 ),
               ),

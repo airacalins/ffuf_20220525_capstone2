@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 
+import 'package:flutter_playground/routes/routes.dart';
 import 'package:flutter_playground/themes/themes.dart';
 import 'package:flutter_playground/screens/screens.dart';
 
@@ -16,6 +17,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: AppTheme.themeData,
       home: RegisterScreen(),
+      initialRoute: RouteManager.splashScreen,
+      onGenerateRoute: RouteManager.generateRoute,
     );
   }
 }

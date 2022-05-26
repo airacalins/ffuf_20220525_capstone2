@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: use_key_in_widget_constructors
 
 import 'package:flutter/material.dart';
 
@@ -10,15 +10,15 @@ class ApplicationsScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text('Applications'),
+        title: const Text('Applications'),
       ),
       body: Column(
         children: [
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 15, vertical: 20),
+            padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
             child: Text(
               'Your Applications',
-              style: textTheme.headline3!.merge(TextStyle(
+              style: textTheme.headline3!.merge(const TextStyle(
                 fontWeight: FontWeight.w500,
               )),
             ),
