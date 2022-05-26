@@ -35,8 +35,6 @@ class Job {
 class Jobs with ChangeNotifier {
   final List<Job> _jobs = JobsData.jobs;
 
-  // UnmodifiableListView<Job> get jobs => UnmodifiableListView([..._jobs]);
-
   List<Job> get recentJobs {
     final jobs = [..._jobs];
     jobs.sort((a, b) => a.date.compareTo(b.date));

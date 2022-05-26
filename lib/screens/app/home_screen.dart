@@ -62,6 +62,11 @@ class HomeScreen extends StatelessWidget {
                 ),
               ],
             ),
+            Container(
+              height: 180,
+              padding: EdgeInsets.symmetric(vertical: 10),
+              child: PopularJobList(),
+            ),
             SizedBox(
               height: 15,
             ),
