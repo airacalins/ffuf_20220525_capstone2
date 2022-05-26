@@ -2,51 +2,85 @@
 
 import 'package:flutter/material.dart';
 
+import 'package:flutter_playground/models/models.dart';
+import 'package:flutter_playground/widgets/widgets.dart';
+
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  HomeScreen({Key? key}) : super(key: key);
+
+  final user = User(
+    id: 'user1',
+    imageUrl: 'assets/images/avatars/avatar-1.png',
+    firstName: 'Adom',
+    lastName: 'Shafi',
+    email: 'hellobesnik@gmail.com',
+    password: 'P@sswOrd',
+  );
 
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
 
     return Scaffold(
-        appBar: AppBar(
-          title: Text(
-            '',
-          ),
+      appBar: AppBar(
+        title: Text(
+          '',
         ),
-        body: Container(
-          padding: EdgeInsets.all(10.0),
-          child: Column(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Popular Job',
-                    style: textTheme.headline4,
-                  ),
-                  Text(
-                    'Show All',
-                    style: textTheme.caption,
-                  ),
-                ],
+        actions: [
+          Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 10.0,
+              vertical: 5.0,
+            ),
+            child: CircleAvatar(
+              backgroundImage: AssetImage(
+                user.imageUrl,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Recent Post',
-                    style: textTheme.headline4,
-                  ),
-                  Text(
-                    'Show All',
-                    style: textTheme.caption,
-                  ),
-                ],
-              ),
-            ],
+              radius: 20.0,
+            ),
           ),
-        ));
+        ],
+      ),
+      body: Container(
+        padding: EdgeInsets.all(20.0),
+        child: Column(
+          children: [
+            SearchTextField(),
+            SizedBox(
+              height: 15,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'Popular Job',
+                  style: textTheme.headline4,
+                ),
+                Text(
+                  'Show All',
+                  style: textTheme.caption,
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'Recent Post',
+                  style: textTheme.headline4,
+                ),
+                Text(
+                  'Show All',
+                  style: textTheme.caption,
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }

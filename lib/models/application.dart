@@ -3,6 +3,9 @@
 enum ApplicationStatus {
   Pending,
   Delivered,
+  Processing,
+  Hired,
+  Declined,
 }
 
 class Application {

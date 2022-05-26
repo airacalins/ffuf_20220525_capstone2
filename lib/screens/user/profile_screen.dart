@@ -5,6 +5,7 @@ import 'package:flutter_playground/models/user.dart';
 
 class ProfileScreen extends StatelessWidget {
   User user = User(
+    id: 'user1',
     imageUrl: 'assets/images/avatars/avatar-1.png',
     firstName: 'Adom',
     lastName: 'Shafi',

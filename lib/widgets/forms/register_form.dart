@@ -1,8 +1,10 @@
 // ignore_for_file: use_key_in_widget_constructors
 
 import 'package:flutter/material.dart';
-import 'package:flutter_playground/widgets/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
+import 'package:flutter_playground/routes/routes.dart';
+import 'package:flutter_playground/widgets/widgets.dart';
 
 class RegisterForm extends StatelessWidget {
   @override
@@ -12,25 +14,34 @@ class RegisterForm extends StatelessWidget {
       children: [
         FormTextField(
           hintText: 'Email',
-          prefixIcon: Padding(
-            padding: const EdgeInsets.all(10.0),
+          prefixIcon: Container(
+            width: 15,
+            padding: const EdgeInsets.symmetric(horizontal: 12.0),
             child: SvgPicture.asset(
               'assets/icons/email.svg',
-              height: 5,
             ),
           ),
         ),
         const FormTextField(
           hintText: 'Username',
-          prefixIcon: Icon(Icons.person_outline),
+          prefixIcon: Icon(
+            Icons.person_outline,
+            color: Colors.grey,
+          ),
         ),
         FormTextField(
           hintText: 'Password',
-          prefixIcon: Padding(
-            padding: const EdgeInsets.all(12.0),
-            child: SvgPicture.asset('assets/icons/lock.svg'),
+          prefixIcon: Container(
+            width: 15,
+            padding: const EdgeInsets.symmetric(horizontal: 15.0),
+            child: SvgPicture.asset(
+              'assets/icons/lock.svg',
+            ),
           ),
-          suffixIcon: const Icon(Icons.remove_red_eye_outlined),
+          suffixIcon: const Icon(
+            Icons.remove_red_eye_outlined,
+            color: Colors.grey,
+          ),
         ),
         const SizedBox(
           height: 40,
@@ -38,7 +49,7 @@ class RegisterForm extends StatelessWidget {
         SizedBox(
           width: double.infinity,
           child: ElevatedButton(
-            onPressed: () {},
+            onPressed: () => Navigator.of(context).pushNamed(RouteManager.homeScreen),
             child: const Text('SIGN UP'),
           ),
         ),

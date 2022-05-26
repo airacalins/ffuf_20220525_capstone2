@@ -1,8 +1,10 @@
 // ignore_for_file: use_key_in_widget_constructors
 
 import 'package:flutter/material.dart';
-import 'package:flutter_playground/widgets/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
+import 'package:flutter_playground/routes/routes.dart';
+import 'package:flutter_playground/widgets/widgets.dart';
 
 class LoginForm extends StatelessWidget {
   @override
@@ -14,18 +16,19 @@ class LoginForm extends StatelessWidget {
       children: [
         FormTextField(
           hintText: 'Email',
-          prefixIcon: Padding(
-            padding: const EdgeInsets.all(10.0),
+          prefixIcon: Container(
+            width: 15,
+            padding: const EdgeInsets.symmetric(horizontal: 12.0),
             child: SvgPicture.asset(
               'assets/icons/email.svg',
-              fit: BoxFit.cover,
             ),
           ),
         ),
         FormTextField(
           hintText: 'Password',
-          prefixIcon: Padding(
-            padding: const EdgeInsets.all(12.0),
+          prefixIcon: Container(
+            width: 15,
+            padding: const EdgeInsets.symmetric(horizontal: 15.0),
             child: SvgPicture.asset(
               'assets/icons/lock.svg',
             ),
@@ -47,7 +50,7 @@ class LoginForm extends StatelessWidget {
         SizedBox(
           width: double.infinity,
           child: ElevatedButton(
-            onPressed: () {},
+            onPressed: () => Navigator.of(context).pushNamed(RouteManager.homeScreen),
             child: const Text('LOG IN'),
           ),
         ),

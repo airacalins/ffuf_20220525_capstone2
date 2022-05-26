@@ -4,14 +4,19 @@ import 'package:flutter/material.dart';
 
 class FormTextField extends StatelessWidget {
   final String hintText;
-  final Widget prefixIcon;
+  final Widget? prefixIcon;
   final Widget? suffixIcon;
 
-  const FormTextField({required this.hintText, required this.prefixIcon, this.suffixIcon});
+  const FormTextField({
+    required this.hintText,
+    this.prefixIcon,
+    this.suffixIcon,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return Container(
+      width: double.infinity,
       padding: const EdgeInsets.symmetric(vertical: 10.0),
       child: TextField(
         decoration: InputDecoration(
@@ -20,7 +25,7 @@ class FormTextField extends StatelessWidget {
           suffixIcon: suffixIcon,
           filled: true,
           fillColor: Colors.white,
-          contentPadding: const EdgeInsets.symmetric(vertical: 15.0),
+          contentPadding: const EdgeInsets.all(15.0),
           focusedBorder: OutlineInputBorder(
             borderSide: BorderSide(color: Theme.of(context).primaryColor),
             borderRadius: BorderRadius.circular(12),
