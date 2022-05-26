@@ -34,52 +34,7 @@ class LoginScreen extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 10.0),
-                    child: FormTextField(
-                      hintText: 'Email',
-                      prefixIcon: const Icon(
-                        Icons.email,
-                        color: Colors.grey,
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 10.0),
-                    child: FormTextField(
-                      hintText: 'Password',
-                      prefixIcon: const Icon(
-                        Icons.lock_outline,
-                        color: Colors.grey,
-                      ),
-                      suffixIcon: const Icon(
-                        Icons.remove_red_eye_outlined,
-                        color: Colors.grey,
-                        size: 20,
-                      ),
-                    ),
-                  ),
-                  Text(
-                    'Forget Password?',
-                    style: textTheme.caption!.merge(
-                      const TextStyle(fontWeight: FontWeight.w500),
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 40,
-                  ),
-                  SizedBox(
-                    width: double.infinity,
-                    child: ElevatedButton(
-                      onPressed: () {},
-                      child: const Text('LOG IN'),
-                    ),
-                  ),
-                ],
-              ),
+              LoginForm(),
               const SizedBox(
                 height: 40,
               ),
@@ -97,23 +52,24 @@ class LoginScreen extends StatelessWidget {
                   const SizedBox(
                     height: 20,
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        'New User? ',
-                        style: textTheme.bodyText1,
-                      ),
-                      Text(
-                        'Create Account',
-                        style: textTheme.bodyText1!.merge(
-                          const TextStyle(
-                            fontWeight: FontWeight.w600,
-                            color: Color(0xff1A1D1E),
+                  RichText(
+                    text: TextSpan(
+                      children: [
+                        TextSpan(
+                          text: 'New User? ',
+                          style: textTheme.bodyText1,
+                        ),
+                        TextSpan(
+                          text: 'Create Account',
+                          style: textTheme.bodyText1!.merge(
+                            const TextStyle(
+                              fontWeight: FontWeight.w600,
+                              color: Color(0xff1A1D1E),
+                            ),
                           ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   )
                 ],
               )

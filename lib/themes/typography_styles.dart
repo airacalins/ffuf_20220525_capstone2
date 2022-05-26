@@ -13,22 +13,22 @@ class TypographyStyles {
     headline1: TextStyle(
       fontSize: 34,
       fontWeight: FontWeight.w600,
-      color: ColorThemeData.textColor,
+      color: ColorTheme.textColor,
     ),
     headline2: TextStyle(
       fontSize: 30,
       fontWeight: FontWeight.w600,
-      color: ColorThemeData.textColor,
+      color: ColorTheme.textColor,
     ),
     headline3: TextStyle(
       fontSize: 24,
       fontWeight: FontWeight.w600,
-      color: ColorThemeData.textColor,
+      color: ColorTheme.textColor,
     ),
     headline4: TextStyle(
       fontSize: 20,
       fontWeight: FontWeight.w600,
-      color: ColorThemeData.textColor,
+      color: ColorTheme.textColor,
     ),
     headlineLarge: TextStyle(fontSize: 34),
   );

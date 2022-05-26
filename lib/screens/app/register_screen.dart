@@ -34,56 +34,7 @@ class RegisterScreen extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 10.0),
-                    child: FormTextField(
-                      hintText: 'Email',
-                      prefixIcon: const Icon(
-                        Icons.person_outlined,
-                        color: Colors.grey,
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 10.0),
-                    child: FormTextField(
-                      hintText: 'Username',
-                      prefixIcon: const Icon(
-                        Icons.email_outlined,
-                        color: Colors.grey,
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 10.0),
-                    child: FormTextField(
-                      hintText: 'Password',
-                      prefixIcon: const Icon(
-                        Icons.lock_outline,
-                        color: Colors.grey,
-                      ),
-                      suffixIcon: const Icon(
-                        Icons.remove_red_eye_outlined,
-                        color: Colors.grey,
-                        size: 20,
-                      ),
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 40,
-                  ),
-                  SizedBox(
-                    width: double.infinity,
-                    child: ElevatedButton(
-                      onPressed: () {},
-                      child: const Text('SIGN UP'),
-                    ),
-                  ),
-                ],
-              ),
+              RegisterForm(),
               const SizedBox(
                 height: 40,
               ),
@@ -101,23 +52,24 @@ class RegisterScreen extends StatelessWidget {
                   const SizedBox(
                     height: 20,
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        'Already Have an Account? ',
-                        style: textTheme.bodyText1,
-                      ),
-                      Text(
-                        'Log In',
-                        style: textTheme.bodyText1!.merge(
-                          const TextStyle(
-                            fontWeight: FontWeight.w600,
-                            color: Color(0xff1A1D1E),
+                  RichText(
+                    text: TextSpan(
+                      children: [
+                        TextSpan(
+                          text: 'Already Have an Account? ',
+                          style: textTheme.bodyText1,
+                        ),
+                        TextSpan(
+                          text: 'Log In',
+                          style: textTheme.bodyText1!.merge(
+                            const TextStyle(
+                              fontWeight: FontWeight.w600,
+                              color: Color(0xff1A1D1E),
+                            ),
                           ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   )
                 ],
               )

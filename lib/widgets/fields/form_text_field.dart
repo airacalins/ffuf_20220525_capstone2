@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 
 class FormTextField extends StatelessWidget {
   final String hintText;
-  final Widget prefixIcon;
-  final Widget? suffixIcon;
+  final IconData prefixIcon;
+  final IconData? suffixIcon;
 
   FormTextField({required this.hintText, required this.prefixIcon, this.suffixIcon});
 
@@ -14,8 +14,15 @@ class FormTextField extends StatelessWidget {
     return TextField(
       decoration: InputDecoration(
         hintText: hintText,
-        prefixIcon: prefixIcon,
-        suffixIcon: suffixIcon,
+        prefixIcon: Icon(
+          prefixIcon,
+          color: Colors.grey,
+        ),
+        suffixIcon: Icon(
+          suffixIcon,
+          color: Colors.grey,
+          size: 20,
+        ),
         filled: true,
         fillColor: Colors.white,
         contentPadding: const EdgeInsets.symmetric(vertical: 15.0),

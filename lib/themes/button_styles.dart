@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_playground/themes/themes.dart';
 
 class ButtonStyles {
   static final elevatedButtonTheme = ElevatedButtonThemeData(
@@ -6,7 +7,7 @@ class ButtonStyles {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(12.0),
       ),
-      backgroundColor: const Color(0xff4CA6A8),
+      backgroundColor: ColorTheme.primaryColor,
       primary: Colors.white,
       padding: const EdgeInsets.symmetric(vertical: 15.0),
       textStyle: const TextStyle(
