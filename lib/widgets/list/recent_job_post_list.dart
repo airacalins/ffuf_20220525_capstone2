@@ -15,26 +15,28 @@ class RecentJobPostList extends StatelessWidget {
     final recentJobs = Provider.of<Jobs>(context).recentJobs;
     final deviceHeight = MediaQuery.of(context).size.height;
 
+    void handleShowJobDetails(Job job) {
+      showModalBottomSheet(
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(
+            top: Radius.circular(40.0),
+          ),
+        ),
+        isScrollControlled: true,
+        constraints: BoxConstraints(
+          maxHeight: deviceHeight * 0.88,
+        ),
+        context: context,
+        builder: (context) => JobDetailsScreen(job),
+      );
+    }
+
     return ListView.builder(
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
       itemBuilder: (context, index) => RecentJobPostCard(
         job: recentJobs[index],
-        onTap: () {
-          showModalBottomSheet(
-            shape: const RoundedRectangleBorder(
-              borderRadius: BorderRadius.vertical(
-                top: const Radius.circular(40.0),
-              ),
-            ),
-            isScrollControlled: true,
-            constraints: BoxConstraints(
-              maxHeight: deviceHeight * 0.88,
-            ),
-            context: context,
-            builder: (context) => JobDetailsScreen(recentJobs[index]),
-          );
-        },
+        onTap: () => handleShowJobDetails(recentJobs[index]),
       ),
       itemCount: recentJobs.length,
     );
