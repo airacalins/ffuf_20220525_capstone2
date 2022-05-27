@@ -41,49 +41,52 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: Container(
-        padding: EdgeInsets.all(20.0),
-        child: Column(
-          children: [
-            SearchTextField(),
-            SizedBox(
-              height: 15,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  'Popular Job',
-                  style: textTheme.headline4,
-                ),
-                Text(
-                  'Show All',
-                  style: textTheme.caption,
-                ),
-              ],
-            ),
-            Container(
-              height: 180,
-              padding: EdgeInsets.symmetric(vertical: 10),
-              child: PopularJobList(),
-            ),
-            SizedBox(
-              height: 15,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  'Recent Post',
-                  style: textTheme.headline4,
-                ),
-                Text(
-                  'Show All',
-                  style: textTheme.caption,
-                ),
-              ],
-            ),
-          ],
+      body: SingleChildScrollView(
+        child: Container(
+          padding: EdgeInsets.all(20),
+          child: Column(
+            children: [
+              SearchTextField(),
+              SizedBox(
+                height: 15,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Popular Job',
+                    style: textTheme.headline4,
+                  ),
+                  Text(
+                    'Show All',
+                    style: textTheme.caption,
+                  ),
+                ],
+              ),
+              Container(
+                height: 180,
+                padding: EdgeInsets.symmetric(vertical: 10),
+                child: PopularJobList(),
+              ),
+              SizedBox(
+                height: 15,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Recent Post',
+                    style: textTheme.headline4,
+                  ),
+                  Text(
+                    'Show All',
+                    style: textTheme.caption,
+                  ),
+                ],
+              ),
+              RecentJobPostList(),
+            ],
+          ),
         ),
       ),
     );

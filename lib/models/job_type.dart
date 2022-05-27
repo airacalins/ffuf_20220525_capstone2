@@ -13,5 +13,9 @@ class JobType {
 }
 
 class JobTypes with ChangeNotifier {
-  List<JobType> jobTypes = JobTypesData.jobTypes;
+  List<JobType> _jobTypes = JobTypesData.jobTypes;
+
+  JobType getJobTypeById(String id) {
+    return [..._jobTypes].firstWhere((jobType) => jobType.id == id);
+  }
 }

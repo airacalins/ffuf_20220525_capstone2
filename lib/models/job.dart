@@ -2,6 +2,7 @@
 import 'dart:collection';
 
 import 'package:flutter/material.dart';
+
 import 'package:flutter_playground/data/data.dart';
 
 class Job {
@@ -13,6 +14,7 @@ class Job {
   final String location;
   final String categoryId;
   final String subCategoryId;
+  final String jobTypeId;
   final List<String> qualifications;
   final DateTime date;
   int numberOfApplicant;
@@ -26,6 +28,7 @@ class Job {
     required this.location,
     required this.categoryId,
     required this.subCategoryId,
+    required this.jobTypeId,
     required this.qualifications,
     required this.date,
     this.numberOfApplicant = 0,

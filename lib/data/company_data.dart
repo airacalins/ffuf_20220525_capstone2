@@ -52,14 +52,5 @@ class CompanyData {
       address: 'Economia, 1110 Quezon City, Philippines',
       websiteUrl: 'https://www.mashupgarage.com/',
     ),
-    Company(
-      id: '7',
-      name: 'UTAK POS',
-      imageUrl: 'LaunchGarage, Quezon City, Eastwood, Metro Manila, Philippines',
-      companyDescription:
-          'UTAK POS (www.utak.ph) is one of Asia\'s leading Cloud POS + Inventory Management Fin-Tech Start-Ups - helping business owners manage their real-time sales, inventory, employee attendance and much more - and all you need is a tablet and subscription! We even provide a FREE e-commerce platform so they can take your business online and get your own website to start accepting orders + payments!/n/nWe\'re also an award-winning, proudly Filipino Fin-Tech Start-Up built from scratch in Manila to support MSME\'s (Micro, Small and Medium Enterprises) with affordable technology solutions like Cloud-Based POS (point-of-sale) Inventory, time attendance and e-commerce software on an iPad/Tablet or phone - our social mission and advocacy is to help local businesses grow, so they can create more jobs, which reduces poverty and supports the local economy./n/nWe serve 1000\'s of clients all across the Philippines - in industries as diverse as Cafes, Restaurants, Food Kiosks, Franchises, Milk Tea stores, Retail, Services, Pharmacies, Spas, groceries and Sari Sari stores.',
-      address: 'Economia, 1110 Quezon City, Philippines',
-      websiteUrl: 'https://www.mashupgarage.com/',
-    ),
   ];
 }

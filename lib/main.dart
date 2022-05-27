@@ -19,6 +19,7 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: (context) => Jobs()),
         ChangeNotifierProvider(create: (context) => Companies()),
+        ChangeNotifierProvider(create: (context) => JobTypes()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
