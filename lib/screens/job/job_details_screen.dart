@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
 import 'package:flutter_playground/models/models.dart';
 import 'package:flutter_playground/themes/color_theme.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter_playground/widgets/widgets.dart';
 
 class JobDetailsScreen extends StatelessWidget {
   final Job job;
@@ -10,27 +12,31 @@ class JobDetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Company company = Provider.of<Companies>(context).getCompanyById(job.companyId);
-    final JobType jobType = Provider.of<JobTypes>(context).getJobTypeById(job.jobTypeId);
     final textTheme = Theme.of(context).textTheme;
+    final JobType jobType = Provider.of<JobTypes>(context).getJobTypeById(job.jobTypeId);
 
-    return SingleChildScrollView(
-      child: Container(
-        width: double.infinity,
-        padding: const EdgeInsets.symmetric(horizontal: 20),
+    final List<String> detailTabs = ['Description', 'Company', 'Reviews'];
+
+    return Container(
+      decoration: const BoxDecoration(
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(40.0),
+          topRight: Radius.circular(40.0),
+        ),
+      ),
+      width: double.infinity,
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      child: DefaultTabController(
+        length: detailTabs.length,
         child: Column(
           children: [
             const SizedBox(
               height: 10,
             ),
-            Container(
-              height: 5,
-              width: 100,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(50),
-                color: Colors.grey.shade300,
-              ),
+            const BottomSheetTopHorizontalController(),
+            const SizedBox(
+              height: 30,
             ),
-            const SizedBox(height: 30),
             Container(
               width: 70,
               height: 70,
@@ -119,51 +125,24 @@ class JobDetailsScreen extends StatelessWidget {
               ],
             ),
             const SizedBox(
-              height: 100,
+              height: 20,
             ),
-            Container(
-              width: double.infinity,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+            TabBar(
+              tabs: detailTabs.map((e) => Tab(text: e)).toList(),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            Expanded(
+              child: TabBarView(
                 children: [
-                  Text(
-                    'Qualifications:',
-                    style: textTheme.headline4,
-                  ),
-                  SizedBox(
-                    height: 5,
-                  ),
-                  ListView.builder(
-                    shrinkWrap: true,
-                    physics: NeverScrollableScrollPhysics(),
-                    itemCount: job.qualifications.length,
-                    itemBuilder: (BuildContext context, int index) => Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 15.0),
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.only(top: 6, right: 10.0),
-                            child: Icon(
-                              Icons.circle,
-                              size: 7,
-                              color: ColorTheme.textColor,
-                            ),
-                          ),
-                          Expanded(
-                            child: Text(
-                              job.qualifications[index],
-                              softWrap: true,
-                              style: textTheme.caption,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
+                  QualificationDetails(job.qualifications),
+                  CompanyDetails(company),
+                  CompanyDetails(company),
                 ],
               ),
-            )
+            ),
+            // Expanded(child: CompanyDetails(company))
           ],
         ),
       ),

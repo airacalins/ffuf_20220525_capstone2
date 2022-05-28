@@ -10,5 +10,6 @@ class AppTheme {
     scaffoldBackgroundColor: ColorTheme.scaffoldBackgroundColor,
     textTheme: TypographyStyles.textTheme,
     elevatedButtonTheme: ButtonStyles.elevatedButtonTheme,
+    tabBarTheme: TabBarStyles.tabBarStyles,
   );
 }
