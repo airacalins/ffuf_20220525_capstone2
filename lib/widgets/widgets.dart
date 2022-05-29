@@ -3,6 +3,7 @@ export 'package:flutter_playground/widgets/bottom_sheet/bottom_sheet_top_horizon
 export 'package:flutter_playground/widgets/button_group/social_media_login_group.dart';
 export 'package:flutter_playground/widgets/cards/popular_job_card.dart';
 export 'package:flutter_playground/widgets/cards/recent_job_post_card.dart';
+export 'package:flutter_playground/widgets/drawer_nav_bar/drawer_nav_bar.dart';
 export 'package:flutter_playground/widgets/fields/form_text_field.dart';
 export 'package:flutter_playground/widgets/fields/search_text_field.dart';
 export 'package:flutter_playground/widgets/forms/login_form.dart';
