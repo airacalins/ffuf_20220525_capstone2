@@ -1,3 +1,4 @@
+export 'package:flutter_playground/widgets/bottom_nav_bar/bottom_nav_bar.dart';
 export 'package:flutter_playground/widgets/bottom_sheet/bottom_sheet_top_horizontal_controller.dart';
 export 'package:flutter_playground/widgets/button_group/social_media_login_group.dart';
 export 'package:flutter_playground/widgets/cards/popular_job_card.dart';
@@ -9,4 +10,5 @@ export 'package:flutter_playground/widgets/forms/register_form.dart';
 export 'package:flutter_playground/widgets/list/popular_job_list.dart';
 export 'package:flutter_playground/widgets/list/recent_job_post_list.dart';
 export 'package:flutter_playground/widgets/specific_screens/job_details/company_details.dart';
+export 'package:flutter_playground/widgets/specific_screens/job_details/job_details_tab.dart';
 export 'package:flutter_playground/widgets/specific_screens/job_details/qualification_details.dart';
