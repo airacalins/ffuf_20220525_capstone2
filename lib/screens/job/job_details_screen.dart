@@ -11,11 +11,9 @@ class JobDetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Company company =
-        Provider.of<Companies>(context).getCompanyById(job.companyId);
+    final Company company = Provider.of<Companies>(context).getCompanyById(job.companyId);
     final textTheme = Theme.of(context).textTheme;
-    final JobType jobType =
-        Provider.of<JobTypes>(context).getJobTypeById(job.jobTypeId);
+    final JobType jobType = Provider.of<JobTypes>(context).getJobTypeById(job.jobTypeId);
 
     return Container(
       decoration: const BoxDecoration(
@@ -125,10 +123,9 @@ class JobDetailsScreen extends StatelessWidget {
           const SizedBox(
             height: 20,
           ),
-
-          // JobDetailsTab(job),
-
-          // Expanded(child: CompanyDetails(company))
+          Expanded(
+            child: JobDetailsTab(job),
+          ),
         ],
       ),
     );

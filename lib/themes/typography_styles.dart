@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_playground/themes/themes.dart';
 
 class TypographyStyles {
-  static TextTheme textTheme = const TextTheme(
+  static TextTheme theme = const TextTheme(
     caption: TextStyle(fontWeight: FontWeight.w500),
     bodyText1: TextStyle(
       letterSpacing: 0.2,

@@ -4,4 +4,6 @@ export 'package:flutter_playground/screens/app/register_screen.dart';
 export 'package:flutter_playground/screens/app/splash_screen.dart';
 export 'package:flutter_playground/screens/application/applications_screen.dart';
 export 'package:flutter_playground/screens/job/job_details_screen.dart';
+export 'package:flutter_playground/screens/message/messages_screen.dart';
+export 'package:flutter_playground/screens/settings/settings_screen.dart';
 export 'package:flutter_playground/screens/user/profile_screen.dart';

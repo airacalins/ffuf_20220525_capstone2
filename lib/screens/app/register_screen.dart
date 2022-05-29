@@ -20,19 +20,7 @@ class RegisterScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Register Account',
-                    style: Theme.of(context).textTheme.headline2,
-                  ),
-                  Text(
-                    'Fill your details or continue\nwith social media',
-                    style: Theme.of(context).textTheme.bodyText1,
-                  ),
-                ],
-              ),
+              header(context),
               const SizedBox(
                 height: 20,
               ),
@@ -40,47 +28,71 @@ class RegisterScreen extends StatelessWidget {
               const SizedBox(
                 height: 40,
               ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Text(
-                    '- Or Continue with -',
-                    style: Theme.of(context).textTheme.bodyText1,
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  SocialMediaLoginLoginGroup(),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        'Already Have an Account? ',
-                        style: textTheme.bodyText1,
-                      ),
-                      GestureDetector(
-                        onTap: () => Navigator.of(context).pushNamed(RouteManager.loginScreen),
-                        child: Text(
-                          'Log In',
-                          style: textTheme.bodyText1!.merge(
-                            const TextStyle(
-                              fontWeight: FontWeight.w600,
-                              color: Color(0xff1A1D1E),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  )
-                ],
-              )
+              socialMediaLinks(context, textTheme)
             ],
           ),
         ),
       ),
+    );
+  }
+
+  Column header(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          'Register Account',
+          style: textTheme.headline2,
+        ),
+        Text(
+          'Fill your details or continue\nwith social media',
+          style: textTheme.bodyText1,
+        ),
+      ],
+    );
+  }
+
+  Column socialMediaLinks(BuildContext context, TextTheme textTheme) {
+    final textTheme = Theme.of(context).textTheme;
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Text(
+          '- Or Continue with -',
+          style: textTheme.bodyText1,
+        ),
+        const SizedBox(
+          height: 20,
+        ),
+        SocialMediaLoginLoginGroup(),
+        const SizedBox(
+          height: 20,
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              'Already Have an Account? ',
+              style: textTheme.bodyText1,
+            ),
+            GestureDetector(
+              onTap: () => Navigator.of(context).pushNamed(RouteManager.loginScreen),
+              child: Text(
+                'Log In',
+                style: textTheme.bodyText1!.merge(
+                  const TextStyle(
+                    fontWeight: FontWeight.w600,
+                    color: Color(0xff1A1D1E),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        )
+      ],
     );
   }
 }

@@ -50,7 +50,7 @@ class LoginForm extends StatelessWidget {
         SizedBox(
           width: double.infinity,
           child: ElevatedButton(
-            onPressed: () => Navigator.of(context).pushNamed(RouteManager.homeScreen),
+            onPressed: () => Navigator.of(context).pushNamed(RouteManager.appScreen),
             child: const Text('LOG IN'),
           ),
         ),

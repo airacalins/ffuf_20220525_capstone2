@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_playground/themes/themes.dart';
 
 class TabBarStyles {
-  static final TabBarTheme tabBarStyles = TabBarTheme(
+  static final TabBarTheme theme = TabBarTheme(
     unselectedLabelColor: ColorTheme.textColor,
     unselectedLabelStyle: const TextStyle(
       fontSize: 15,

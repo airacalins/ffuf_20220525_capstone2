@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_playground/screens/app/home_screen.dart';
+import 'package:flutter_playground/screens/screens.dart';
+import 'package:provider/provider.dart';
+
+import 'package:flutter_playground/common/bottom_nav.dart';
 
 class BottomNavBar extends StatelessWidget {
   const BottomNavBar({
@@ -7,6 +12,8 @@ class BottomNavBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final bottomNavData = Provider.of<BottomNav>(context);
+
     return ClipRRect(
       borderRadius: const BorderRadius.only(
         topLeft: Radius.circular(30.0),
@@ -14,7 +21,8 @@ class BottomNavBar extends StatelessWidget {
       ),
       child: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
-        // backgroundColor: Colors.white,
+        currentIndex: bottomNavData.currentIndex,
+        onTap: (index) => bottomNavData.onTap(index),
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),

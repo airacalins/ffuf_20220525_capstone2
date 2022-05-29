@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_playground/screens/app/app_screen.dart';
 
 import 'package:flutter_playground/screens/screens.dart';
 
@@ -6,6 +7,7 @@ class RouteManager {
   static const String splashScreen = '/';
   static const String loginScreen = '/login';
   static const String registerScreen = '/register';
+  static const String appScreen = '/appScreen';
   static const String homeScreen = '/homeScreen';
   static const String applicationScreen = '/applications';
 
@@ -24,6 +26,11 @@ class RouteManager {
       case registerScreen:
         return MaterialPageRoute(
           builder: (context) => const RegisterScreen(),
+        );
+
+      case appScreen:
+        return MaterialPageRoute(
+          builder: (context) => AppScreen(),
         );
 
       case homeScreen:
