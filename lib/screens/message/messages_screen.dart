@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_playground/widgets/widgets.dart';
 
 class MessagesScreen extends StatelessWidget {
   const MessagesScreen({Key? key}) : super(key: key);
@@ -6,11 +7,17 @@ class MessagesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        title: Text('Messages'),
+        centerTitle: true,
+      ),
       body: Center(
         child: Text(
-          'Messages',
+          'Message',
         ),
       ),
+      bottomNavigationBar: BottomNavBar(),
     );
   }
 }

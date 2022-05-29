@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_playground/screens/app/home_screen.dart';
-import 'package:flutter_playground/screens/screens.dart';
 import 'package:provider/provider.dart';
 
 import 'package:flutter_playground/common/bottom_nav.dart';

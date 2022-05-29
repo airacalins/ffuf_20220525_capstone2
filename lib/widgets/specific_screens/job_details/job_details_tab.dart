@@ -31,7 +31,6 @@ class JobDetailsTab extends StatelessWidget {
             SliverOverlapAbsorber(
               handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context),
               sliver: SliverAppBar(
-                // title: const Text('Books'),
                 automaticallyImplyLeading: false,
                 floating: true,
                 pinned: true,

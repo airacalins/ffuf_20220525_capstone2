@@ -20,7 +20,7 @@ class QualificationDetails extends StatelessWidget {
           top: 70,
           bottom: 20,
         ),
-        padding: EdgeInsets.symmetric(
+        padding: const EdgeInsets.symmetric(
           horizontal: 10,
         ),
         decoration: BoxDecoration(borderRadius: BorderRadius.circular(40.0)),

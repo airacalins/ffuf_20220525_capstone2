@@ -11,16 +11,16 @@ class BottomNavBarStyles {
     ),
     unselectedLabelStyle: TextStyle(
       fontSize: 10,
-      color: Colors.red,
+      color: Colors.grey,
     ),
     selectedIconTheme: IconThemeData(
       color: ColorTheme.primaryColor,
     ),
     selectedLabelStyle: TextStyle(
-      color: Colors.red,
+      color: ColorTheme.primaryColor,
       fontSize: 10,
     ),
-    showSelectedLabels: false,
+    // showSelectedLabels: false,
     backgroundColor: Colors.white,
   );
 }
