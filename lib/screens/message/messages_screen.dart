@@ -9,15 +9,15 @@ class MessagesScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        title: Text('Messages'),
+        title: const Text('Messages'),
         centerTitle: true,
       ),
-      body: Center(
+      body: const Center(
         child: Text(
           'Message',
         ),
       ),
-      bottomNavigationBar: BottomNavBar(),
+      bottomNavigationBar: const BottomNavBar(),
     );
   }
 }

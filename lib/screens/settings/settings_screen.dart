@@ -1,17 +1,25 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-import 'package:flutter_playground/widgets/widgets.dart';
+import '../../common/common.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final bottomNavData = Provider.of<BottomNav>(context);
+
     return Scaffold(
       appBar: AppBar(
-        automaticallyImplyLeading: false,
+        leading: IconButton(
+          icon: const Icon(
+            Icons.arrow_back,
+          ),
+          onPressed: () => bottomNavData.onTap(0),
+        ),
         title: Text('Settings'),
         centerTitle: true,
       ),
@@ -20,7 +28,6 @@ class SettingsScreen extends StatelessWidget {
           'Settings',
         ),
       ),
-      bottomNavigationBar: const BottomNavBar(),
     );
   }
 }

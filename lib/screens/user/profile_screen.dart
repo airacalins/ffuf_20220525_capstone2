@@ -1,8 +1,10 @@
-// ignore_for_file: use_key_in_widget_constructors, must_be_immutable
+// ignore_for_file: must_be_immutable, use_key_in_widget_constructors
 
 import 'package:flutter/material.dart';
 import 'package:flutter_playground/models/user.dart';
-import 'package:flutter_playground/widgets/widgets.dart';
+import 'package:provider/provider.dart';
+
+import '../../common/common.dart';
 
 class ProfileScreen extends StatelessWidget {
   User user = User(
@@ -16,11 +18,17 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final bottomNavData = Provider.of<BottomNav>(context);
     final textTheme = Theme.of(context).textTheme;
 
     return Scaffold(
       appBar: AppBar(
-        automaticallyImplyLeading: false,
+        leading: IconButton(
+          icon: const Icon(
+            Icons.arrow_back,
+          ),
+          onPressed: () => bottomNavData.onTap(0),
+        ),
         centerTitle: true,
         title: const Text(
           'Profile',
@@ -82,7 +90,6 @@ class ProfileScreen extends StatelessWidget {
           ),
         ],
       ),
-      bottomNavigationBar: const BottomNavBar(),
     );
   }
 }

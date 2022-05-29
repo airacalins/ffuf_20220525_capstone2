@@ -17,22 +17,18 @@ class RouteManager {
         return MaterialPageRoute(
           builder: (context) => const SplashScreen(),
         );
-
       case loginScreen:
         return MaterialPageRoute(
           builder: (context) => const LoginScreen(),
         );
-
       case registerScreen:
         return MaterialPageRoute(
           builder: (context) => const RegisterScreen(),
         );
-
       case appScreen:
         return MaterialPageRoute(
           builder: (context) => AppScreen(),
         );
-
       case homeScreen:
         return MaterialPageRoute(
           builder: (context) => HomeScreen(),

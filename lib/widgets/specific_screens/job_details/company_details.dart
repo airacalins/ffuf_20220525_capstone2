@@ -5,7 +5,7 @@ import 'package:flutter_playground/models/models.dart';
 class CompanyDetails extends StatelessWidget {
   final Company company;
 
-  CompanyDetails(
+  const CompanyDetails(
     this.company, {
     Key? key,
   }) : super(key: key);

@@ -13,12 +13,12 @@ class SearchTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Expanded(
+        const Expanded(
           child: FormTextField(hintText: 'Search here...'),
         ),
         Container(
-          padding: EdgeInsets.all(15),
-          margin: EdgeInsets.only(left: 10.0),
+          padding: const EdgeInsets.all(15),
+          margin: const EdgeInsets.only(left: 10.0),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(15.0),
             color: ColorTheme.primaryColor,
