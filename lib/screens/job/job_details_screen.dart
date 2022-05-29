@@ -30,58 +30,15 @@ class JobDetailsScreen extends StatelessWidget {
             height: 10,
           ),
           const BottomSheetTopHorizontalController(),
-          const SizedBox(
-            height: 30,
-          ),
-          Container(
-            width: 70,
-            height: 70,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
-              color: Colors.grey.shade300,
-            ),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(20),
-              child: Image(
-                image: NetworkImage(company.imageUrl),
-                fit: BoxFit.cover,
-              ),
-            ),
-          ),
-          const SizedBox(
-            height: 10,
-          ),
-          Text(
-            job.title,
-            style: textTheme.headline4,
-          ),
+          header(company, textTheme),
           const SizedBox(
             height: 15,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
-                company.name,
-                style: const TextStyle(
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-              Container(
-                margin: const EdgeInsets.symmetric(
-                  horizontal: 8,
-                ),
-                height: 2,
-                width: 20,
-                color: ColorTheme.textColor,
-              ),
-              Icon(
-                Icons.location_on_outlined,
-                color: Colors.grey.shade600,
-                size: 20,
-              ),
-              const SizedBox(width: 5),
-              Text(job.location)
+              companyName(company),
+              jobLocation(),
             ],
           ),
           const SizedBox(
@@ -109,15 +66,7 @@ class JobDetailsScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              Text(
-                '\$${job.salaryFrom.toStringAsFixed(0)}/m',
-                style: textTheme.titleMedium!.merge(
-                  TextStyle(
-                    fontWeight: FontWeight.normal,
-                    color: Colors.grey.shade600,
-                  ),
-                ),
-              )
+              salary(textTheme)
             ],
           ),
           const SizedBox(
@@ -127,6 +76,83 @@ class JobDetailsScreen extends StatelessWidget {
             child: JobDetailsTab(job),
           ),
         ],
+      ),
+    );
+  }
+
+  Column header(Company company, TextTheme textTheme) {
+    return Column(
+      children: [
+        Container(
+          margin: const EdgeInsets.only(
+            top: 30,
+            bottom: 10,
+          ),
+          width: 70,
+          height: 70,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20),
+            color: Colors.grey.shade300,
+          ),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(20),
+            child: Image(
+              image: NetworkImage(company.imageUrl),
+              fit: BoxFit.cover,
+            ),
+          ),
+        ),
+        Text(
+          job.title,
+          style: textTheme.headline4,
+        ),
+      ],
+    );
+  }
+
+  Row jobLocation() {
+    return Row(
+      children: [
+        Icon(
+          Icons.location_on_outlined,
+          color: Colors.grey.shade600,
+          size: 20,
+        ),
+        const SizedBox(width: 5),
+        Text(job.location)
+      ],
+    );
+  }
+
+  Row companyName(Company company) {
+    return Row(
+      children: [
+        Text(
+          company.name,
+          style: const TextStyle(
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+        Container(
+          margin: const EdgeInsets.symmetric(
+            horizontal: 8,
+          ),
+          height: 2,
+          width: 20,
+          color: ColorTheme.textColor,
+        ),
+      ],
+    );
+  }
+
+  Text salary(TextTheme textTheme) {
+    return Text(
+      '\$${job.salaryFrom.toStringAsFixed(0)}/m',
+      style: textTheme.titleMedium!.merge(
+        TextStyle(
+          fontWeight: FontWeight.normal,
+          color: Colors.grey.shade600,
+        ),
       ),
     );
   }

@@ -47,26 +47,13 @@ class JobDetailsTab extends StatelessWidget {
         },
         body: TabBarView(
           children: [
+            QualificationDetails(job.qualifications),
+            CompanyDetails(company),
             SingleChildScrollView(
               child: Container(
                 margin: const EdgeInsets.only(
                   top: 75,
-                ),
-                child: QualificationDetails(job.qualifications),
-              ),
-            ),
-            SingleChildScrollView(
-              child: Container(
-                margin: const EdgeInsets.only(
-                  top: 75,
-                ),
-                child: CompanyDetails(company),
-              ),
-            ),
-            SingleChildScrollView(
-              child: Container(
-                margin: const EdgeInsets.only(
-                  top: 75,
+                  bottom: 20,
                 ),
                 child: CompanyDetails(company),
               ),
