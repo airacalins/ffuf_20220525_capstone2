@@ -11,6 +11,7 @@ export 'package:flutter_playground/widgets/fields/search_text_field.dart';
 export 'package:flutter_playground/widgets/forms/login_form.dart';
 export 'package:flutter_playground/widgets/forms/register_form.dart';
 export 'package:flutter_playground/widgets/list/application_list.dart';
+export 'package:flutter_playground/widgets/list/message_list.dart';
 export 'package:flutter_playground/widgets/list/popular_job_list.dart';
 export 'package:flutter_playground/widgets/list/recent_job_post_list.dart';
 export 'package:flutter_playground/widgets/specific_screens/job_details_screen/company_details.dart';

@@ -7,6 +7,9 @@ class UserProvider with ChangeNotifier {
 
   User getLoginUser(String userId) {
     return [..._users].firstWhere((user) => user.id == userId);
-    // notifyListeners();
+  }
+
+  User getUserById(String userId) {
+    return [..._users].firstWhere((user) => user.id == userId);
   }
 }

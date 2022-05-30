@@ -12,6 +12,7 @@ class MessagesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final bottomNav = Provider.of<BottomNav>(context);
     final drawerNav = Provider.of<DrawerNav>(context);
+
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -27,11 +28,7 @@ class MessagesScreen extends StatelessWidget {
         title: const Text('Messages'),
         centerTitle: true,
       ),
-      body: const Center(
-        child: Text(
-          'Message',
-        ),
-      ),
+      body: MessageList(),
       bottomNavigationBar: const BottomNavBar(),
     );
   }
