@@ -1,9 +1,7 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../common/common.dart';
+import 'package:flutter_playground/common/common.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({Key? key}) : super(key: key);
@@ -18,15 +16,13 @@ class SettingsScreen extends StatelessWidget {
           icon: const Icon(
             Icons.arrow_back,
           ),
-          onPressed: () => bottomNavData.onTap(0),
+          onPressed: () => bottomNavData.homeScreen(),
         ),
-        title: Text('Settings'),
         centerTitle: true,
+        title: Text('Settings'),
       ),
       body: Center(
-        child: Text(
-          'Settings',
-        ),
+        child: Text('Settings'),
       ),
     );
   }

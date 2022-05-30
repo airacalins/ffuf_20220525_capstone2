@@ -5,7 +5,6 @@ import 'package:flutter_playground/providers/application_provider.dart';
 import 'package:provider/provider.dart';
 
 import 'package:flutter_playground/widgets/widgets.dart';
-import 'package:flutter_playground/models/models.dart';
 import 'package:flutter_playground/common/common.dart';
 import 'package:flutter_playground/routes/routes.dart';
 

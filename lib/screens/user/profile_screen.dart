@@ -18,7 +18,7 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bottomNavData = Provider.of<BottomNav>(context);
+    final bottomNav = Provider.of<BottomNav>(context);
     final textTheme = Theme.of(context).textTheme;
 
     return Scaffold(
@@ -27,7 +27,7 @@ class ProfileScreen extends StatelessWidget {
           icon: const Icon(
             Icons.arrow_back,
           ),
-          onPressed: () => bottomNavData.onTap(0),
+          onPressed: () => bottomNav.homeScreen(),
         ),
         centerTitle: true,
         title: const Text(

@@ -8,7 +8,10 @@ class RouteManager {
   static const String registerScreen = '/register';
   static const String appScreen = '/appScreen';
   static const String homeScreen = '/homeScreen';
+  static const String editProfileScreen = '/editProfileScreen';
   static const String applicationScreen = '/applicationsScreen';
+  static const String notificationScreen = '/notificationScreen';
+  static const String shareAppScreen = '/shareAppScreen';
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -32,9 +35,21 @@ class RouteManager {
         return MaterialPageRoute(
           builder: (context) => HomeScreen(),
         );
+      case editProfileScreen:
+        return MaterialPageRoute(
+          builder: (context) => const EditProfileScreen(),
+        );
       case applicationScreen:
         return MaterialPageRoute(
           builder: (context) => ApplicationsScreen(),
+        );
+      case notificationScreen:
+        return MaterialPageRoute(
+          builder: (context) => const NotificationScreen(),
+        );
+      case shareAppScreen:
+        return MaterialPageRoute(
+          builder: (context) => const ShareAppScreen(),
         );
 
       // TODO: Not Found Page Screen

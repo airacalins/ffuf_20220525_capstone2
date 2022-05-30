@@ -44,7 +44,8 @@ class DrawerNavBar extends StatelessWidget {
                 bgColor: const Color(0xfff9454c),
                 icon: Icons.exit_to_app,
                 title: 'Logout',
-                onTap: () => Navigator.of(context).pushReplacementNamed(RouteManager.loginScreen),
+                onTap: () => Navigator.of(context)
+                    .pushReplacementNamed(RouteManager.loginScreen),
                 textTheme: textTheme,
               )
             ],
@@ -84,35 +85,44 @@ class DrawerNavBar extends StatelessWidget {
           bgColor: const Color(0xfffa5441),
           icon: Icons.person,
           title: 'Edit Profile',
-          onTap: () => {},
+          onTap: () => Navigator.of(context)
+              .pushReplacementNamed(RouteManager.editProfileScreen),
           textTheme: textTheme,
         ),
         menuItem(
           bgColor: const Color(0xfffb9087),
           icon: Icons.watch_later,
           title: 'Applications',
-          onTap: () => Navigator.of(context).pushReplacementNamed(RouteManager.applicationScreen),
+          onTap: () => Navigator.of(context)
+              .pushReplacementNamed(RouteManager.applicationScreen),
           textTheme: textTheme,
         ),
         menuItem(
           bgColor: const Color(0xff2cb9b5),
           icon: Icons.settings,
           title: 'Notification Settings',
-          onTap: () => {},
+          onTap: () => Navigator.of(context)
+              .pushReplacementNamed(RouteManager.notificationScreen),
           textTheme: textTheme,
         ),
         menuItem(
           bgColor: const Color(0xfff933c0),
           icon: Icons.favorite,
           title: 'Share App',
-          onTap: () => {},
+          onTap: () => Navigator.of(context)
+              .pushReplacementNamed(RouteManager.shareAppScreen),
           textTheme: textTheme,
         ),
       ],
     );
   }
 
-  GestureDetector menuItem({required Color bgColor, required IconData icon, required String title, required Function onTap, required TextTheme textTheme}) {
+  GestureDetector menuItem(
+      {required Color bgColor,
+      required IconData icon,
+      required String title,
+      required Function onTap,
+      required TextTheme textTheme}) {
     return GestureDetector(
       onTap: () => onTap(),
       child: Container(
@@ -132,7 +142,8 @@ class DrawerNavBar extends StatelessWidget {
               padding: const EdgeInsets.only(left: 15),
               child: Text(
                 title,
-                style: textTheme.bodyText1!.merge(const TextStyle(fontWeight: FontWeight.w500)),
+                style: textTheme.bodyText1!
+                    .merge(const TextStyle(fontWeight: FontWeight.w500)),
               ),
             ),
           ],
