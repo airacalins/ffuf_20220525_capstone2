@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
 import 'package:flutter_playground/themes/color_theme.dart';
 
 class AppBarStyles {
@@ -8,7 +9,7 @@ class AppBarStyles {
     foregroundColor: Colors.black,
     elevation: 0,
     systemOverlayStyle: SystemUiOverlayStyle(
-      statusBarColor: ColorTheme.scaffoldBackgroundColor,
+      statusBarColor: Colors.black12,
     ),
   );
 }

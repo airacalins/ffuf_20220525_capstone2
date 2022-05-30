@@ -12,9 +12,12 @@ class JobDetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Company company = Provider.of<CompanyProvider>(context).getCompanyById(job.companyId);
+    final Company company =
+        Provider.of<CompanyProvider>(context).getCompanyById(job.companyId);
+    final JobType jobType =
+        Provider.of<JobTypeProvider>(context).getJobTypeById(job.jobTypeId);
     final textTheme = Theme.of(context).textTheme;
-    final JobType jobType = Provider.of<JobTypeProvider>(context).getJobTypeById(job.jobTypeId);
+    final deviceWidth = MediaQuery.of(context).size.width;
 
     return Container(
       decoration: const BoxDecoration(
@@ -23,7 +26,7 @@ class JobDetailsScreen extends StatelessWidget {
           topRight: Radius.circular(40.0),
         ),
       ),
-      width: double.infinity,
+      width: deviceWidth,
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Column(
         children: [
@@ -105,6 +108,7 @@ class JobDetailsScreen extends StatelessWidget {
         ),
         Text(
           job.title,
+          textAlign: TextAlign.center,
           style: textTheme.headline4,
         ),
       ],

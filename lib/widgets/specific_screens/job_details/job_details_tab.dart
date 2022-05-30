@@ -21,7 +21,8 @@ class JobDetailsTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Company company = Provider.of<CompanyProvider>(context).getCompanyById(job.companyId);
+    final Company company =
+        Provider.of<CompanyProvider>(context).getCompanyById(job.companyId);
 
     return DefaultTabController(
       length: detailTabs.length,
@@ -49,13 +50,9 @@ class JobDetailsTab extends StatelessWidget {
           children: [
             QualificationDetails(job.qualifications),
             CompanyDetails(company),
-            SingleChildScrollView(
-              child: Container(
-                margin: const EdgeInsets.only(
-                  top: 75,
-                  bottom: 20,
-                ),
-                child: CompanyDetails(company),
+            const SingleChildScrollView(
+              child: Center(
+                child: Text('Reviews'),
               ),
             ),
           ],
