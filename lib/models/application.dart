@@ -1,8 +1,5 @@
 // ignore_for_file: constant_identifier_names
 
-import 'package:flutter/material.dart';
-import 'package:flutter_playground/data/data.dart';
-
 enum ApplicationStatus {
   Pending,
   Delivered,

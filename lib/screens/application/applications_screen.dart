@@ -25,7 +25,7 @@ class ApplicationsScreen extends StatelessWidget {
             drawerNav.close();
             bottomNavData.homeScreen();
           },
-          icon: const Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back_ios),
         ),
         centerTitle: true,
         title: const Text('Applications'),

@@ -1,26 +1,20 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, use_key_in_widget_constructors
 
 import 'package:flutter/material.dart';
-import 'package:flutter_playground/common/common.dart';
-
-import 'package:flutter_playground/models/models.dart';
-import 'package:flutter_playground/themes/themes.dart';
-import 'package:flutter_playground/widgets/widgets.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+
+import 'package:flutter_playground/themes/themes.dart';
+import 'package:flutter_playground/common/common.dart';
+import 'package:flutter_playground/widgets/widgets.dart';
+import 'package:flutter_playground/models/models.dart';
+import 'package:flutter_playground/providers/providers.dart';
 
 class HomeScreen extends StatelessWidget {
-  final user = User(
-    id: 'user1',
-    imageUrl: 'assets/images/avatars/avatar-1.png',
-    firstName: 'Adom',
-    lastName: 'Shafi',
-    email: 'hellobesnik@gmail.com',
-    password: 'P@sswOrd',
-  );
-
   @override
   Widget build(BuildContext context) {
+    final user = Provider.of<UserProvider>(context).getLoginUser('1');
+
     final drawerNav = Provider.of<DrawerNav>(context);
     final textTheme = Theme.of(context).textTheme;
 
@@ -28,11 +22,13 @@ class HomeScreen extends StatelessWidget {
       children: [
         DrawerNavBar(),
         AnimatedContainer(
-          transform: Matrix4.translationValues(drawerNav.xOffset, drawerNav.yOffset, 0)..scale(drawerNav.scaleFactor),
+          transform:
+              Matrix4.translationValues(drawerNav.xOffset, drawerNav.yOffset, 0)
+                ..scale(drawerNav.scaleFactor),
           color: ColorTheme.scaffoldBackgroundColor,
           duration: Duration(milliseconds: 250),
           child: Scaffold(
-            appBar: appBar(drawerNav),
+            appBar: appBar(drawerNav, user),
             body: SingleChildScrollView(
               child: Container(
                 padding: EdgeInsets.all(20),
@@ -58,7 +54,7 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  AppBar appBar(DrawerNav drawerNav) {
+  AppBar appBar(DrawerNav drawerNav, User user) {
     return AppBar(
       leading: drawerNav.isDrawerOpen
           ? GestureDetector(
@@ -76,7 +72,7 @@ class HomeScreen extends StatelessWidget {
             vertical: 5.0,
           ),
           child: CircleAvatar(
-            backgroundImage: AssetImage(
+            backgroundImage: NetworkImage(
               user.imageUrl,
             ),
             radius: 20.0,

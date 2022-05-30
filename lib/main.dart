@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -18,17 +16,19 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
+        ChangeNotifierProvider(create: (context) => UserProvider()),
         ChangeNotifierProvider(create: (context) => BottomNav()),
         ChangeNotifierProvider(create: (context) => DrawerNav()),
         ChangeNotifierProvider(create: (context) => JobProvider()),
         ChangeNotifierProvider(create: (context) => CompanyProvider()),
         ChangeNotifierProvider(create: (context) => JobTypeProvider()),
         ChangeNotifierProvider(create: (context) => ApplicationProvider()),
+        ChangeNotifierProvider(create: (context) => MessageProvider()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: AppTheme.themeData,
-        home: SplashScreen(),
+        home: const SplashScreen(),
         initialRoute: RouteManager.splashScreen,
         onGenerateRoute: RouteManager.generateRoute,
       ),

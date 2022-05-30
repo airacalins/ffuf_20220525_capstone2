@@ -16,7 +16,7 @@ class ShareAppScreen extends StatelessWidget {
       appBar: AppBar(
         leading: IconButton(
           icon: const Icon(
-            Icons.arrow_back,
+            Icons.arrow_back_ios,
           ),
           onPressed: () {
             Navigator.of(context).pushReplacementNamed(RouteManager.homeScreen);
@@ -28,7 +28,7 @@ class ShareAppScreen extends StatelessWidget {
         title: const Text('Share App'),
       ),
       body: const Center(
-        child: const Text('Share App'),
+        child: Text('Share App'),
       ),
     );
   }

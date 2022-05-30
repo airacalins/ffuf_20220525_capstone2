@@ -4,7 +4,7 @@ import 'package:flutter_playground/data/data.dart';
 import 'package:flutter_playground/models/models.dart';
 
 class JobTypeProvider with ChangeNotifier {
-  List<JobType> _jobTypes = JobTypesData.jobTypes;
+  final List<JobType> _jobTypes = JobTypesData.jobTypes;
 
   JobType getJobTypeById(String id) {
     return [..._jobTypes].firstWhere((jobType) => jobType.id == id);

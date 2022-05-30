@@ -14,14 +14,14 @@ class SettingsScreen extends StatelessWidget {
       appBar: AppBar(
         leading: IconButton(
           icon: const Icon(
-            Icons.arrow_back,
+            Icons.arrow_back_ios,
           ),
           onPressed: () => bottomNavData.homeScreen(),
         ),
         centerTitle: true,
-        title: Text('Settings'),
+        title: const Text('Settings'),
       ),
-      body: Center(
+      body: const Center(
         child: Text('Settings'),
       ),
     );

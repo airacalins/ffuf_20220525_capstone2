@@ -1,22 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_playground/models/models.dart';
+import 'package:flutter_playground/providers/providers.dart';
 import 'package:flutter_playground/routes/routes.dart';
+import 'package:provider/provider.dart';
 
 class DrawerNavBar extends StatelessWidget {
   const DrawerNavBar({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final user = Provider.of<UserProvider>(context).getLoginUser('1');
     final textTheme = Theme.of(context).textTheme;
-
-    User user = User(
-      id: 'user1',
-      imageUrl: 'assets/images/avatars/avatar-1.png',
-      firstName: 'Adom',
-      lastName: 'Shafi',
-      email: 'hellobesnik@gmail.com',
-      password: 'P@sswOrd',
-    );
 
     return SafeArea(
       child: Scaffold(
@@ -60,7 +54,7 @@ class DrawerNavBar extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         CircleAvatar(
-          backgroundImage: AssetImage(user.imageUrl),
+          backgroundImage: NetworkImage(user.imageUrl),
           radius: 40.0,
         ),
         const SizedBox(

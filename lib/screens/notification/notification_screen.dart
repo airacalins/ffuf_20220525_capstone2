@@ -19,7 +19,7 @@ class NotificationScreen extends StatelessWidget {
       appBar: AppBar(
         leading: IconButton(
           icon: const Icon(
-            Icons.arrow_back,
+            Icons.arrow_back_ios,
           ),
           onPressed: () {
             Navigator.of(context).pushReplacementNamed(RouteManager.homeScreen);

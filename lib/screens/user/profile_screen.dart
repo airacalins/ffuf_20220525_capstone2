@@ -1,23 +1,15 @@
 // ignore_for_file: must_be_immutable, use_key_in_widget_constructors
 
 import 'package:flutter/material.dart';
-import 'package:flutter_playground/models/user.dart';
 import 'package:provider/provider.dart';
 
 import '../../common/common.dart';
+import 'package:flutter_playground/providers/providers.dart';
 
 class ProfileScreen extends StatelessWidget {
-  User user = User(
-    id: 'user1',
-    imageUrl: 'assets/images/avatars/avatar-1.png',
-    firstName: 'Adom',
-    lastName: 'Shafi',
-    email: 'hellobesnik@gmail.com',
-    password: 'P@sswOrd',
-  );
-
   @override
   Widget build(BuildContext context) {
+    final user = Provider.of<UserProvider>(context).getLoginUser('1');
     final bottomNav = Provider.of<BottomNav>(context);
     final textTheme = Theme.of(context).textTheme;
 
@@ -25,7 +17,7 @@ class ProfileScreen extends StatelessWidget {
       appBar: AppBar(
         leading: IconButton(
           icon: const Icon(
-            Icons.arrow_back,
+            Icons.arrow_back_ios,
           ),
           onPressed: () => bottomNav.homeScreen(),
         ),
@@ -46,7 +38,7 @@ class ProfileScreen extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.all(5.0),
                       child: CircleAvatar(
-                        backgroundImage: AssetImage(
+                        backgroundImage: NetworkImage(
                           user.imageUrl,
                         ),
                         radius: 40,
