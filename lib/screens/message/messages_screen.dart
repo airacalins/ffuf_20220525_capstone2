@@ -27,6 +27,12 @@ class MessagesScreen extends StatelessWidget {
         ),
         title: const Text('Messages'),
         centerTitle: true,
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.search),
+          ),
+        ],
       ),
       body: MessageList(),
       bottomNavigationBar: const BottomNavBar(),
