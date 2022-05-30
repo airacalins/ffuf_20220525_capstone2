@@ -1,11 +1,13 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:flutter_playground/common/common.dart';
 
 import 'package:flutter_playground/models/models.dart';
 import 'package:flutter_playground/themes/themes.dart';
 import 'package:flutter_playground/widgets/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -24,24 +26,20 @@ class _HomeScreenState extends State<HomeScreen> {
     password: 'P@sswOrd',
   );
 
-  double xOffset = 0;
-  double yOffset = 0;
-  double scaleFactor = 1;
-  bool isDrawerOpen = false;
-
   @override
   Widget build(BuildContext context) {
+    final drawerNav = Provider.of<DrawerNav>(context);
     final textTheme = Theme.of(context).textTheme;
 
     return Stack(
       children: [
         DrawerNavBar(),
         AnimatedContainer(
-          transform: Matrix4.translationValues(xOffset, yOffset, 0)..scale(scaleFactor),
+          transform: Matrix4.translationValues(drawerNav.xOffset, drawerNav.yOffset, 0)..scale(drawerNav.scaleFactor),
           color: ColorTheme.scaffoldBackgroundColor,
           duration: Duration(milliseconds: 250),
           child: Scaffold(
-            appBar: appBar(),
+            appBar: appBar(drawerNav),
             body: SingleChildScrollView(
               child: Container(
                 padding: EdgeInsets.all(20),
@@ -67,25 +65,15 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  AppBar appBar() {
+  AppBar appBar(DrawerNav drawerNav) {
     return AppBar(
-      leading: isDrawerOpen
+      leading: drawerNav.isDrawerOpen
           ? GestureDetector(
-              onTap: () => setState(() {
-                xOffset = 0;
-                yOffset = 0;
-                scaleFactor = 1;
-                isDrawerOpen = false;
-              }),
+              onTap: () => drawerNav.close(),
               child: menuButton(),
             )
           : GestureDetector(
-              onTap: () => setState(() {
-                xOffset = 300;
-                yOffset = 80;
-                scaleFactor = 0.8;
-                isDrawerOpen = true;
-              }),
+              onTap: () => drawerNav.open(),
               child: menuButton(),
             ),
       actions: [

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_playground/screens/app/app_screen.dart';
 
 import 'package:flutter_playground/screens/screens.dart';
 
@@ -9,7 +8,7 @@ class RouteManager {
   static const String registerScreen = '/register';
   static const String appScreen = '/appScreen';
   static const String homeScreen = '/homeScreen';
-  static const String applicationScreen = '/applications';
+  static const String applicationScreen = '/applicationsScreen';
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -32,6 +31,10 @@ class RouteManager {
       case homeScreen:
         return MaterialPageRoute(
           builder: (context) => HomeScreen(),
+        );
+      case applicationScreen:
+        return MaterialPageRoute(
+          builder: (context) => ApplicationsScreen(),
         );
 
       // TODO: Not Found Page Screen

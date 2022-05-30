@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_playground/models/models.dart';
+import 'package:flutter_playground/routes/routes.dart';
 
 class DrawerNavBar extends StatelessWidget {
   const DrawerNavBar({Key? key}) : super(key: key);
@@ -18,33 +19,36 @@ class DrawerNavBar extends StatelessWidget {
     );
 
     return SafeArea(
-      child: Container(
-        color: Colors.white,
-        width: double.infinity,
-        padding: const EdgeInsets.symmetric(
-          vertical: 70,
-          horizontal: 30,
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                header(user, textTheme),
-                const SizedBox(
-                  height: 15,
-                ),
-                menu(textTheme),
-              ],
-            ),
-            menuItem(
-              const Color(0xfff9454c),
-              Icons.exit_to_app,
-              'Logout',
-              textTheme,
-            ),
-          ],
+      child: Scaffold(
+        body: Container(
+          color: Colors.white,
+          width: double.infinity,
+          padding: const EdgeInsets.symmetric(
+            vertical: 70,
+            horizontal: 30,
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  header(user, textTheme),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  menu(context, textTheme),
+                ],
+              ),
+              menuItem(
+                bgColor: const Color(0xfff9454c),
+                icon: Icons.exit_to_app,
+                title: 'Logout',
+                onTap: () => Navigator.of(context).pushReplacementNamed(RouteManager.loginScreen),
+                textTheme: textTheme,
+              )
+            ],
+          ),
         ),
       ),
     );
@@ -70,59 +74,69 @@ class DrawerNavBar extends StatelessWidget {
     );
   }
 
-  Column menu(TextTheme textTheme) {
+  Column menu(
+    BuildContext context,
+    TextTheme textTheme,
+  ) {
     return Column(
       children: [
         menuItem(
-          const Color(0xfffa5441),
-          Icons.person,
-          'Edit Profile',
-          textTheme,
+          bgColor: const Color(0xfffa5441),
+          icon: Icons.person,
+          title: 'Edit Profile',
+          onTap: () => {},
+          textTheme: textTheme,
         ),
         menuItem(
-          const Color(0xfffb9087),
-          Icons.watch_later,
-          'Applications',
-          textTheme,
+          bgColor: const Color(0xfffb9087),
+          icon: Icons.watch_later,
+          title: 'Applications',
+          onTap: () => Navigator.of(context).pushReplacementNamed(RouteManager.applicationScreen),
+          textTheme: textTheme,
         ),
         menuItem(
-          const Color(0xff2cb9b5),
-          Icons.settings,
-          'Notification Settings',
-          textTheme,
+          bgColor: const Color(0xff2cb9b5),
+          icon: Icons.settings,
+          title: 'Notification Settings',
+          onTap: () => {},
+          textTheme: textTheme,
         ),
         menuItem(
-          const Color(0xfff933c0),
-          Icons.favorite,
-          'Share App',
-          textTheme,
+          bgColor: const Color(0xfff933c0),
+          icon: Icons.favorite,
+          title: 'Share App',
+          onTap: () => {},
+          textTheme: textTheme,
         ),
       ],
     );
   }
 
-  Container menuItem(Color bgColor, IconData icon, String title, TextTheme textTheme) {
-    return Container(
-      padding: const EdgeInsets.symmetric(vertical: 15),
-      child: Row(
-        children: [
-          CircleAvatar(
-            radius: 18,
-            backgroundColor: bgColor,
-            child: Icon(
-              icon,
-              color: Colors.white,
-              size: 18,
+  GestureDetector menuItem({required Color bgColor, required IconData icon, required String title, required Function onTap, required TextTheme textTheme}) {
+    return GestureDetector(
+      onTap: () => onTap(),
+      child: Container(
+        padding: const EdgeInsets.symmetric(vertical: 15),
+        child: Row(
+          children: [
+            CircleAvatar(
+              radius: 18,
+              backgroundColor: bgColor,
+              child: Icon(
+                icon,
+                color: Colors.white,
+                size: 18,
+              ),
             ),
-          ),
-          Container(
-            padding: const EdgeInsets.only(left: 15),
-            child: Text(
-              title,
-              style: textTheme.bodyText1!.merge(const TextStyle(fontWeight: FontWeight.w500)),
+            Container(
+              padding: const EdgeInsets.only(left: 15),
+              child: Text(
+                title,
+                style: textTheme.bodyText1!.merge(const TextStyle(fontWeight: FontWeight.w500)),
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
