@@ -19,13 +19,3 @@ class Company {
     required this.websiteUrl,
   });
 }
-
-class Companies with ChangeNotifier {
-  final List<Company> _companies = CompanyData.companies;
-
-  List<Company> get companies => [..._companies];
-
-  Company getCompanyById(String id) {
-    return [..._companies].firstWhere((company) => company.id == id);
-  }
-}

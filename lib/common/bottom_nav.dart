@@ -6,7 +6,7 @@ class BottomNav with ChangeNotifier {
   int get currentIndex => _currentIndex;
   set currentIndex(index) => _currentIndex = 0;
 
-  void homeScreenIndex() {
+  void homeScreen() {
     _currentIndex = 0;
     notifyListeners();
   }

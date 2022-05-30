@@ -2,6 +2,7 @@ export 'package:flutter_playground/widgets/bottom_nav_bar/bottom_nav_bar.dart';
 export 'package:flutter_playground/widgets/bottom_sheet/bottom_sheet_top_horizontal_controller.dart';
 export 'package:flutter_playground/widgets/button_group/social_media_login_group.dart';
 export 'package:flutter_playground/widgets/cards/application_card.dart';
+export 'package:flutter_playground/widgets/cards/card_container.dart';
 export 'package:flutter_playground/widgets/cards/popular_job_card.dart';
 export 'package:flutter_playground/widgets/cards/recent_job_post_card.dart';
 export 'package:flutter_playground/widgets/drawer_nav_bar/drawer_nav_bar.dart';

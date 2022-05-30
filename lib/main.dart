@@ -5,9 +5,9 @@ import 'package:provider/provider.dart';
 
 import 'package:flutter_playground/routes/routes.dart';
 import 'package:flutter_playground/common/common.dart';
-import 'package:flutter_playground/models/models.dart';
 import 'package:flutter_playground/themes/themes.dart';
 import 'package:flutter_playground/screens/screens.dart';
+import 'package:flutter_playground/providers/providers.dart';
 
 void main() => runApp(const MyApp());
 
@@ -20,10 +20,10 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: (context) => BottomNav()),
         ChangeNotifierProvider(create: (context) => DrawerNav()),
-        ChangeNotifierProvider(create: (context) => Jobs()),
-        ChangeNotifierProvider(create: (context) => Companies()),
-        ChangeNotifierProvider(create: (context) => JobTypes()),
-        ChangeNotifierProvider(create: (context) => Applications()),
+        ChangeNotifierProvider(create: (context) => JobProvider()),
+        ChangeNotifierProvider(create: (context) => CompanyProvider()),
+        ChangeNotifierProvider(create: (context) => JobTypeProvider()),
+        ChangeNotifierProvider(create: (context) => ApplicationProvider()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

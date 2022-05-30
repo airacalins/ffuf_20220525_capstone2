@@ -40,13 +40,3 @@ class Application {
     throw ('NA');
   }
 }
-
-class Applications with ChangeNotifier {
-  final List<Application> _applications = ApplicationsData.applications;
-
-  List<Application> get applications => [..._applications];
-
-  Application getApplicationById(String id) {
-    return [..._applications].firstWhere((application) => application.id == id);
-  }
-}

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_playground/screens/screens.dart';
 import 'package:provider/provider.dart';
 
+import 'package:flutter_playground/providers/providers.dart';
 import 'package:flutter_playground/models/models.dart';
+import 'package:flutter_playground/screens/screens.dart';
 import 'package:flutter_playground/widgets/widgets.dart';
 
 class RecentJobPostList extends StatelessWidget {
@@ -12,7 +13,7 @@ class RecentJobPostList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final recentJobs = Provider.of<Jobs>(context).recentJobs;
+    final recentJobs = Provider.of<JobProvider>(context).recentJobs;
     final deviceHeight = MediaQuery.of(context).size.height;
 
     void handleShowJobDetails(Job job) {

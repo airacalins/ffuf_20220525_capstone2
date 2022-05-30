@@ -8,7 +8,7 @@ class AppScreen extends StatelessWidget {
   AppScreen({Key? key}) : super(key: key);
 
   final tabs = [
-    const HomeScreen(),
+    HomeScreen(),
     const MessagesScreen(),
     ProfileScreen(),
     const SettingsScreen(),

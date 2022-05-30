@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'package:flutter_playground/providers/providers.dart';
 import 'package:flutter_playground/models/models.dart';
 import 'package:flutter_playground/screens/screens.dart';
 import 'package:flutter_playground/widgets/widgets.dart';
@@ -10,7 +11,7 @@ class PopularJobList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final popularJobs = Provider.of<Jobs>(context).polularJobs;
+    final popularJobs = Provider.of<JobProvider>(context).polularJobs;
     final deviceHeight = MediaQuery.of(context).size.height;
 
     void handleShowJobDetails(Job job) {

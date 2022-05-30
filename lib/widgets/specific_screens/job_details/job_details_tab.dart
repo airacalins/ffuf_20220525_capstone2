@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_playground/providers/providers.dart';
 import 'package:provider/provider.dart';
 
 import 'package:flutter_playground/models/models.dart';
@@ -20,7 +21,7 @@ class JobDetailsTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Company company = Provider.of<Companies>(context).getCompanyById(job.companyId);
+    final Company company = Provider.of<CompanyProvider>(context).getCompanyById(job.companyId);
 
     return DefaultTabController(
       length: detailTabs.length,

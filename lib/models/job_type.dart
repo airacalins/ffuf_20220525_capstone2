@@ -11,11 +11,3 @@ class JobType {
     required this.name,
   });
 }
-
-class JobTypes with ChangeNotifier {
-  List<JobType> _jobTypes = JobTypesData.jobTypes;
-
-  JobType getJobTypeById(String id) {
-    return [..._jobTypes].firstWhere((jobType) => jobType.id == id);
-  }
-}

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_playground/themes/themes.dart';
 import 'package:provider/provider.dart';
 
+import 'package:flutter_playground/themes/themes.dart';
 import 'package:flutter_playground/models/models.dart';
+import 'package:flutter_playground/providers/providers.dart';
+import 'package:flutter_playground/widgets/widgets.dart';
 
 class PopularJobCard extends StatelessWidget {
   final Job job;
@@ -16,18 +18,14 @@ class PopularJobCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Company company = Provider.of<Companies>(context).getCompanyById(job.companyId);
+    final Company company = Provider.of<CompanyProvider>(context).getCompanyById(job.companyId);
     final textTheme = Theme.of(context).textTheme;
 
     return GestureDetector(
       onTap: () => onTap(),
       child: SizedBox(
         width: MediaQuery.of(context).size.height * 0.35,
-        child: Card(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(20),
-          ),
-          elevation: 0,
+        child: CardContainer(
           child: Column(
             children: [
               Padding(

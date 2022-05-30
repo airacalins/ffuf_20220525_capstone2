@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_playground/themes/color_theme.dart';
 import 'package:provider/provider.dart';
 
+import 'package:flutter_playground/themes/color_theme.dart';
 import 'package:flutter_playground/models/models.dart';
+import 'package:flutter_playground/providers/providers.dart';
+import 'package:flutter_playground/widgets/widgets.dart';
 
 class RecentJobPostCard extends StatelessWidget {
   final Job job;
@@ -16,17 +18,13 @@ class RecentJobPostCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Company company = Provider.of<Companies>(context).getCompanyById(job.companyId);
-    final JobType jobType = Provider.of<JobTypes>(context).getJobTypeById(job.jobTypeId);
+    final Company company = Provider.of<CompanyProvider>(context).getCompanyById(job.companyId);
+    final JobType jobType = Provider.of<JobTypeProvider>(context).getJobTypeById(job.jobTypeId);
     final textTheme = Theme.of(context).textTheme;
 
     return GestureDetector(
       onTap: () => onTap(),
-      child: Card(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20),
-        ),
-        elevation: 0,
+      child: CardContainer(
         child: ListTile(
           leading: Container(
             decoration: BoxDecoration(

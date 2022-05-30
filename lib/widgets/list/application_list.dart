@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'package:flutter_playground/providers/providers.dart';
 import 'package:flutter_playground/models/models.dart';
 import 'package:flutter_playground/widgets/widgets.dart';
 
@@ -14,8 +15,8 @@ class ApplicationList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final jobData = Provider.of<Jobs>(context);
-    final companyData = Provider.of<Companies>(context);
+    final jobData = Provider.of<JobProvider>(context);
+    final companyData = Provider.of<CompanyProvider>(context);
 
     return ListView.builder(
       itemCount: applications.length,

@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 
 import 'package:flutter_playground/themes/color_theme.dart';
 import 'package:flutter_playground/models/models.dart';
+import 'package:flutter_playground/providers/providers.dart';
 import 'package:flutter_playground/widgets/widgets.dart';
 
 class JobDetailsScreen extends StatelessWidget {
@@ -11,9 +12,9 @@ class JobDetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Company company = Provider.of<Companies>(context).getCompanyById(job.companyId);
+    final Company company = Provider.of<CompanyProvider>(context).getCompanyById(job.companyId);
     final textTheme = Theme.of(context).textTheme;
-    final JobType jobType = Provider.of<JobTypes>(context).getJobTypeById(job.jobTypeId);
+    final JobType jobType = Provider.of<JobTypeProvider>(context).getJobTypeById(job.jobTypeId);
 
     return Container(
       decoration: const BoxDecoration(
